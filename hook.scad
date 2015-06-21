@@ -53,6 +53,10 @@ tmp=0.5;
 for (y= [1 : 2.5 : 3.5] )
   for (x= [9 : 2 : 14] )
     translate([x,y,-1]) cube([tmp,tmp,1]);
+//base support
+for (y= [2 : 2.5 : 3.5] )
+  for (x= [0 : 21 : 22] )
+    translate([x,y,-1]) cube([tmp,tmp,1]);
 
 cabin_wall();
 //bar();
