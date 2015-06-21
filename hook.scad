@@ -1,3 +1,6 @@
+$fs=0.01;
+$fa=1;
+
 module cabin_wall()
 {
 thickness=2.0;

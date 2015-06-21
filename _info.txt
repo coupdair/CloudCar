@@ -1,3 +1,10 @@
+openscad hook.scad &
+
+openscad -o hook.stl hook.scad
+
+exit
+
+#image
 http://www.thelogbook.com/toybox/twin-pod-cloud-car
 
 
