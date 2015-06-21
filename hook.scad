@@ -1,5 +1,7 @@
-$fs=0.01;
-$fa=1;
+quality=0;
+
+$fs=(quality==1)?0.01:0.1;
+$fa=(quality==1)?5:30;
 
 module cabin_wall()
 {
@@ -52,14 +54,17 @@ translate([22/2-5/2-0.1,2.5-size/2.0,-2.7]) cube([5.2,size,5]);//middle
 
 //support
 tmp=0.5;
+z=-1;
 //hook support
+h=0.9;
 for (y= [1 : 2.5 : 3.5] )
   for (x= [9 : 2 : 14] )
-    translate([x,y,-1]) cube([tmp,tmp,1]);
+    translate([x,y,z]) cube([tmp,tmp,h]);
 //base support
+hh=1;
 for (y= [2 : 2.5 : 3.5] )
   for (x= [0, 1.5,  20, 21.5] )
-    translate([x,y,-1]) cube([tmp,tmp,1]);
+    translate([x,y,z]) cube([tmp,tmp,hh]);
 
 cabin_wall();
 //bar();

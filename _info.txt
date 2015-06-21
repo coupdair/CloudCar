@@ -1,6 +1,7 @@
 openscad hook.scad &
 
-openscad -o hook.stl hook.scad
+openscad -o hook_draft.stl hook.scad
+openscad -o hook.stl -Dquality=1 hook.scad
 
 exit
 
