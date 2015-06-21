@@ -1,4 +1,4 @@
-quality=0;
+quality=0;//=1
 
 $fs=(quality==1)?0.01:0.1;
 $fa=(quality==1)?5:30;
