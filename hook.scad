@@ -55,7 +55,7 @@ for (y= [1 : 2.5 : 3.5] )
     translate([x,y,-1]) cube([tmp,tmp,1]);
 //base support
 for (y= [2 : 2.5 : 3.5] )
-  for (x= [0 : 21 : 22] )
+  for (x= [0, 1.5,  20, 21.5] )
     translate([x,y,-1]) cube([tmp,tmp,1]);
 
 cabin_wall();
