@@ -49,8 +49,10 @@ translate([22/2-5/2-0.1,2.5-size/2.0,-2.7]) cube([5.2,size,5]);//middle
 
 //support
 tmp=0.5;
-y=3.5;
-translate([22/2,y,-1]) cube([tmp,tmp,1]);
+//hook support
+for (y= [1 : 2.5 : 3.5] )
+  for (x= [9 : 2 : 14] )
+    translate([x,y,-1]) cube([tmp,tmp,1]);
 
 cabin_wall();
 //bar();
