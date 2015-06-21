@@ -13,11 +13,19 @@ rotate([0,90,0])
 
 difference()
 {
-  cube([22,6,9]);
+  //base
+  //cube([22,6,9]);//base limits
+  union()
+  {//shaped base
+  cube([22,2.5,9]);
+  translate([0,2.5,2.0])
+    rotate([0,90,0])
+      cylinder(r=2.0,h=23);
+  }//base
   translate([2,0,0]) cube([18,6,3.5]);
 }
 
-radius=3.0;//hook
+radius=2.5;//hook
 size=3.0-0.4;//hook opening
 difference()
 {
@@ -30,10 +38,6 @@ translate([22/2-5/2-0.1,2.5-size/2.0,-2.6]) cube([5.2,size,5]);//middle
 //translate([22/2-5/2-0.1,2.6,-2.6]) cube([5.2,5.0,5]);//rear
 bar();
 }
-
-translate([0,2.5,2.0])
-  rotate([0,90,0])
-    cylinder(r=2.0,h=23);
 
 cabin_wall();
 //bar();
