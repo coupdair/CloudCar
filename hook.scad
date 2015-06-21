@@ -31,5 +31,9 @@ translate([22/2-5/2-0.1,2.5-size/2.0,-2.6]) cube([5.2,size,5]);//middle
 bar();
 }
 
+translate([0,2.5,2.0])
+  rotate([0,90,0])
+    cylinder(r=2.0,h=23);
+
 cabin_wall();
 //bar();
