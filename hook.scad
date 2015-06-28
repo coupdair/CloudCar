@@ -9,6 +9,11 @@ thickness=2.0;
 translate([-2,-thickness,-1]) cube([26,thickness,10]);
 }
 
+module link_hole()
+{
+  translate([22/2-3/2-0.1,-2.6,3.5]) cube([3.2,10.0,1.2]);
+}
+
 module bar()
 {
 rotate([0,90,0])
@@ -29,6 +34,8 @@ difference()
     translate([0,2.0,2]) cube([22,2.5,4]);
   }//shaped base
   translate([2,0,0]) cube([18,6,3.5]);
+  //link
+  link_hole();
 }//base
 
 //hook
@@ -50,6 +57,8 @@ translate([22/2-5/2-0.1,2.5-size/2.0,-2.7]) cube([5.2,size,5]);//middle
 //translate([22/2-5/2-0.1,2.6,-2.6]) cube([5.2,5.0,5]);//rear
   //drilling
   bar();
+  //link
+  link_hole();
 }
 
 //support
@@ -66,5 +75,10 @@ for (y= [2 : 2.5 : 3.5] )
   for (x= [0, 1.5,  20, 21.5] )
     translate([x,y,z]) cube([tmp,tmp,hh]);
 
-cabin_wall();
+difference()
+{
+  cabin_wall();
+  //link
+  link_hole();
+}//base
 //bar();
