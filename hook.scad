@@ -49,7 +49,7 @@ difference()
     translate([22/2-5/2,2.5,2.0])
       rotate([0,90,0])
         cylinder(r=radius,h=5);
-    translate([22/2-5/2-0.1,-2.6,2]) cube([5.2,5.0,5]);//filling hook to base
+    translate([22/2-5/2-0.1,-2.6,-1]) cube([5.2,5.0,7]);//filling hook to base
   }
   //opening
 //translate([22/2-5/2-0.1,-2.6,-2.6]) cube([5.2,5.0,5]);//front
@@ -59,15 +59,17 @@ translate([22/2-5/2-0.1,2.5-size/2.0,-2.7]) cube([5.2,size,5]);//middle
   bar();
   //link
   link_hole();
+  //hook rear
+  translate([22/2-3/2-0.1,3.5,-1.5]) cube([3.2,5.0,5.0]);
 }
 
 //support
-tmp=0.5;
+tmp=0.7;
 z=-1;
 //hook support
 h=0.9;
-for (y= [1 : 2.5 : 3.5] )
-  for (x= [9 : 2 : 14] )
+for (y= [3.5 : 2.5 : 3.5] )
+  for (x= [8.7 : 2 : 14] )
     translate([x,y,z]) cube([tmp,tmp,h]);
 //base support
 hh=1;
