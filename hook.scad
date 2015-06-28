@@ -57,8 +57,10 @@ translate([22/2-5/2-0.1,2.5-size/2.0,-2.7]) cube([5.2,size,5]);//middle
 //translate([22/2-5/2-0.1,2.6,-2.6]) cube([5.2,5.0,5]);//rear
   //drilling
   bar();
-  //link
+  //upper link
   link_hole();
+  //lower link
+  translate([0,0,-4]) link_hole();
   //hook rear
   translate([22/2-3/2-0.1,3.5,-1.5]) cube([3.2,5.0,5.0]);
 }
@@ -69,7 +71,8 @@ z=-1;
 //hook support
 h=0.9;
 for (y= [3.5 : 2.5 : 3.5] )
-  for (x= [8.7 : 2 : 14] )
+  for (x= [8.7
+ : 2 : 14] )
     translate([x,y,z]) cube([tmp,tmp,h]);
 //base support
 hh=1;
@@ -80,7 +83,9 @@ for (y= [2 : 2.5 : 3.5] )
 difference()
 {
   cabin_wall();
-  //link
+  //upper link
   link_hole();
+  //lower link
+  translate([0,0,-4]) link_hole();
 }//base
 //bar();
